@@ -15,7 +15,7 @@ plot_python() {
     printf "%s\n" "${CPU_ARRAY[@]}" > /tmp/cpu.txt
 
     echo "Calling python"
-    python ./WorkflowUtils/memory_plot.py
+    python ./memory_plot.py
 }
 
 trap plot_python EXIT

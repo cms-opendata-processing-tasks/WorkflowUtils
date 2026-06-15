@@ -32,7 +32,7 @@ ax1.legend(line1 + line2, label1 + label2)
 
 fig.tight_layout()
 
-plt.savefig(f"/memoryscan/workflow_memory_plot_{date}.png")
+plt.savefig(f"memoryscan/workflow_memory_plot_{date}.png")
 
 print("Plot saved")
 print("Exiting")
