@@ -5,9 +5,15 @@
 
 How to use:
 
+Create a symlink of the helper script to your working dir
+e.g. If you want to use the memory scan in repo FullSimulationArgoWorkflow:
+```
+ln -s /path/to/WorkflowUtils/start_memory_scan.sh /path/to/FullSimulationArgoWorkflow
+```
+
 Bind the memory scan to your workflow submit command
 ```
-# e.g. if running the simulation workflow
-argo submit -n argo FullSimulationArgoWorkflow/cms-simulation-process/run-simulation-s3.yaml && WorkflowUtils/start_memory_scan.sh >> memoryscan.log 2>&1 & 
+cd /path/to/FullSimulationArgoWorkflow
+argo submit -n argo cms-simulation-process/run-simulation-s3.yaml && start_memory_scan.sh >> memoryscan.log 2>&1 & 
 ```
-The scanning stops automatically when the workflow stops. Then you can inspect the plots in `WorkflowUtils`
+The scanning stops automatically when the workflow stops. Then you can inspect the plots in `FullSimulationArgoWorkflow/`
