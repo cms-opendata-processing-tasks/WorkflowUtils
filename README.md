@@ -8,7 +8,8 @@ How to use:
 Create a symlink of the helper script to your working dir
 e.g. If you want to use the memory scan in repo FullSimulationArgoWorkflow:
 ```
-ln -s /path/to/WorkflowUtils/start_memory_scan.sh /path/to/FullSimulationArgoWorkflow
+ln -s /path/to/WorkflowUtils/start_memory_scan.sh /path/to/FullSimulationArgoWorkflow/start_memory_scan.sh
+ln -s /path/to/WorkflowUtils/memory_plot.py /path/to/FullSimulationArgoWorkflow/memory_plot.py
 ```
 
 Bind the memory scan to your workflow submit command
