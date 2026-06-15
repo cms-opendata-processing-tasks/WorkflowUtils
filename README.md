@@ -15,6 +15,6 @@ ln -s /path/to/WorkflowUtils/memory_plot.py /path/to/FullSimulationArgoWorkflow/
 Bind the memory scan to your workflow submit command
 ```
 cd /path/to/FullSimulationArgoWorkflow
-argo submit -n argo cms-simulation-process/run-simulation-s3.yaml && start_memory_scan.sh >> memoryscan.log 2>&1 & 
+argo submit -n argo cms-simulation-process/run-simulation-s3.yaml && start_memory_scan.sh > memoryscan/scan.log 2>&1 & 
 ```
 The scanning stops automatically when the workflow stops. Then you can inspect the plots in `FullSimulationArgoWorkflow/`
