@@ -26,13 +26,13 @@ kubectl apply -f components.yaml
 sudo apt install jq
 
 pip install -r requirements.txt
-
-mkdir memoryscan
 ```
 
 ### 4. Bind the memory scan to your workflow submit command
 ```
 cd /path/to/FullSimulationArgoWorkflow
+mkdir memoryscan
+
 argo submit -n argo cms-simulation-process/run-pp-simulation.yaml && ./start_memory_scan.sh > memoryscan/scan.log 2>&1 & 
 ```
 The scanning stops automatically when the workflow stops. Then you can inspect the plots in `FullSimulationArgoWorkflow/`
