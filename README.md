@@ -20,7 +20,15 @@ cd /path/to/WorkflowUtils/
 kubectl apply -f components.yaml
 ```
 
-### 3. Bind the memory scan to your workflow submit command
+### 3. Install requirements
+
+```bash
+sudo apt install jq
+
+pip install -r requirements.txt
+```
+
+### 4. Bind the memory scan to your workflow submit command
 ```
 cd /path/to/FullSimulationArgoWorkflow
 argo submit -n argo cms-simulation-process/run-pp-simulation.yaml && start_memory_scan.sh > memoryscan/scan.log 2>&1 & 
