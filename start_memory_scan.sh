@@ -28,7 +28,7 @@ do
     STATUS_JSON=$(argo get @latest -o json -n argo)
     CURRENT_STATUS=$(echo $STATUS_JSON | jq -r '.status.phase')
 
-    if [[ $CURRENT_STATUS == *"Failed"* ]] || [[ $CURRENT_STATUS == *"Succeeded"* ]] ; then
+    if [[ $CURRENT_STATUS == *"Failed"* ]] || [[ $CURRENT_STATUS == *"Error"* ]] ||  [[ $CURRENT_STATUS == *"Succeeded"* ]] ; then
         WORKFLOW_RUNNING=FALSE
 
         exit 0
