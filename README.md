@@ -20,12 +20,14 @@ cd /path/to/WorkflowUtils/
 kubectl apply -f components.yaml
 ```
 
-### 3. Install requirements
+### 3. Requirements
 
 ```bash
 sudo apt install jq
 
 pip install -r requirements.txt
+
+mkdir memoryscan
 ```
 
 ### 4. Bind the memory scan to your workflow submit command
