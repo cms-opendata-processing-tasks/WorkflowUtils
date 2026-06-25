@@ -5,11 +5,10 @@
 
 How to use:
 
-### 1. Create a symlink of the helper script to your working dir
-e.g. If you want to use the memory scan in repo FullSimulationArgoWorkflow:
+### 1. Add the path to this directory in PATH variable 
+
 ```
-ln -s /path/to/WorkflowUtils/start_memory_scan.sh /path/to/FullSimulationArgoWorkflow/start_memory_scan.sh
-ln -s /path/to/WorkflowUtils/memory_plot.py /path/to/FullSimulationArgoWorkflow/memory_plot.py
+export PATH=$PATH:/path/to/WorkflowUtils
 ```
 
 ### 2. Check that you have the Kubernetes Metrics Server enabled
@@ -24,7 +23,12 @@ kubectl apply -f components.yaml
 
 ```bash
 sudo apt install jq
-
+```
+Setup python
+```bash
+cd /path/to/WorkflowUtils
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
@@ -33,6 +37,6 @@ pip install -r requirements.txt
 cd /path/to/FullSimulationArgoWorkflow
 mkdir memoryscan
 
-argo submit -n argo cms-simulation-process/run-pp-simulation.yaml && ./start_memory_scan.sh > memoryscan/scan.log 2>&1 & 
+argo submit -n argo cms-simulation-process/run-pp-simulation.yaml && start_memory_scan.sh > memoryscan/scan.log 2>&1 & 
 ```
 The scanning stops automatically when the workflow stops. Then you can inspect the plots in `FullSimulationArgoWorkflow/`
