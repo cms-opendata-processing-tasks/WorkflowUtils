@@ -20,6 +20,8 @@ plot_python() {
 
 trap plot_python EXIT
 
+source venv/bin/activate
+
 echo "Starting scan"
 
 while [ $WORKFLOW_RUNNING ]
