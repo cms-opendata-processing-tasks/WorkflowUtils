@@ -8,7 +8,15 @@ How to use:
 ### 1. Add the path to this directory in PATH variable 
 
 ```
+nano ~/.bashrc
+
+# Add this line to the end of the file
 export PATH=$PATH:/path/to/WorkflowUtils
+```
+
+Source the file
+```
+source ~/.bashrc
 ```
 
 ### 2. Check that you have the Kubernetes Metrics Server enabled
