@@ -12,7 +12,7 @@ events1 = 50000 # Check values for your datasets
 events2 = 50000 # Check values for your datasets
 
 plottables = ["Electron_pt", "Muon_pt", "Electron_phi", "Muon_phi", "Electron_eta", "Muon_eta"]
-plot_limits = [(0, 80), (0, 80), (-5, 5), (-5, 5), (-5, 5), (-5, 5)]
+plot_limits = [(0, 200), (0, 200), (-5, 5), (-5, 5), (-5, 5), (-5, 5)]
 
 def plot_histogram(variable, plot_low_lim, plot_high_lim):
     # Empty the plotting canvas
@@ -27,10 +27,10 @@ def plot_histogram(variable, plot_low_lim, plot_high_lim):
     avg_2 = np.average(flattened_data_2)
     stdev_1 = np.std(flattened_data_1)
     stdev_2 = np.std(flattened_data_2)
-    under_1 = len(flattened_data_1[flattened_data_1 >= plot_high_lim])
-    under_2 = len(flattened_data_2[flattened_data_2 >= plot_high_lim])
-    over_1 = len(flattened_data_1[flattened_data_1 < plot_low_lim])
-    over_2 = len(flattened_data_2[flattened_data_2 < plot_low_lim])
+    over_1 = len(flattened_data_1[flattened_data_1 >= plot_high_lim])
+    over_2 = len(flattened_data_2[flattened_data_2 >= plot_high_lim])
+    under_1 = len(flattened_data_1[flattened_data_1 < plot_low_lim])
+    under_2 = len(flattened_data_2[flattened_data_2 < plot_low_lim])
 
     plt.hist(
         flattened_data_1, 
