@@ -11,7 +11,7 @@ How to use:
 nano ~/.bashrc
 
 # Add this line to the end of the file
-export PATH=$PATH:/path/to/WorkflowUtils
+export PATH=$PATH:/path/to/WorkflowUtils/memory_scan
 ```
 
 Source the file
@@ -23,7 +23,7 @@ source ~/.bashrc
 
 If `kubectl top pods -n argo` does not work, do this
 ```
-cd /path/to/WorkflowUtils/
+cd /path/to/WorkflowUtils/memory_scan
 kubectl apply -f components.yaml
 ```
 
@@ -34,7 +34,7 @@ sudo apt install jq
 ```
 Setup python
 ```bash
-cd /path/to/WorkflowUtils
+cd /path/to/WorkflowUtils/memory_scan
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
